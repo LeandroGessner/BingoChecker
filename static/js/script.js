@@ -1,6 +1,11 @@
+// Declaration of the main parts of the table
 let table = document.createElement('table');
+
 let thead = document.createElement('thead');
+thead.className = 'table-head';
+
 let tbody = document.createElement('tbody');
+tbody.className = 'table-body';
 
 table.appendChild(thead);
 table.appendChild(tbody);
@@ -30,9 +35,19 @@ mainColumn.forEach(element => {
     
     line.forEach(number => {
         let cell = document.createElement('td');
+        cell.id = 'cell-' + number;
+        cell.onclick = function() {
+            cell.style.backgroundColor = "red";
+        }
+        // cell.onclick = changeBackgroundColor();
         cell.innerHTML = number;
         tableRow.appendChild(cell);
     });
 
     tbody.appendChild(tableRow);
 });
+
+
+function changeBackgroundColor() {
+    alert('agora foi, eu acho')
+};
