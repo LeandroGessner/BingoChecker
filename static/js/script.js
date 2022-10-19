@@ -25,6 +25,7 @@ bingoHeader.forEach(element => {
 
 thead.appendChild(header);
 
+let drawnNumbers = [];
 
 // Creating and adding data to the body of the table
 let mainColumn = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
@@ -36,10 +37,11 @@ mainColumn.forEach(element => {
     line.forEach(number => {
         let cell = document.createElement('td');
         cell.id = 'cell-' + number;
+        
         cell.onclick = function() {
-            cell.style.backgroundColor = "red";
-        }
-        // cell.onclick = changeBackgroundColor();
+            buildArrayWithDrawnNumbers(cell)
+        };
+        
         cell.innerHTML = number;
         tableRow.appendChild(cell);
     });
@@ -48,6 +50,24 @@ mainColumn.forEach(element => {
 });
 
 
-function changeBackgroundColor() {
-    alert('agora foi, eu acho')
+function changeBackgroundColor(drawnNumbersArray) {
+    let currentCell = drawnNumbersArray.slice(-1)
+    let previousCell = drawnNumbersArray.slice(-2)
+
+    if (drawnNumbersArray.length <= 1) {
+        currentCell[0].style.backgroundColor = "red";
+    } else {
+        currentCell[0].style.backgroundColor = "red";
+        previousCell[0].style.backgroundColor = "#ADD8E6";
+    }
+};
+
+
+function buildArrayWithDrawnNumbers(cell) {
+    if (!drawnNumbers.includes(cell)) {
+        drawnNumbers.push(cell);
+        changeBackgroundColor(drawnNumbers);
+    } else {
+        alert("Número inválido!")
+    };
 };

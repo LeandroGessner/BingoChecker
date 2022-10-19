@@ -21,13 +21,15 @@ td, th {
 
 thead {
     background-color: dodgerblue;
+    user-select: none;
 }
 
 td:hover {
-    background-color: yellow;
+    background-color: #d3d3d3;
     transition: 0.5s;
     opacity: 0.7;
     cursor: pointer;
+    user-select: none;
 }
 
 .buttons {
