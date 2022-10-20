@@ -2,8 +2,27 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-    text-align: center;
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#btn-menu {
+    background-color: white;
+    vertical-align: middle;
+    font-size: 14px;
+    border-color: white;
+    box-shadow: white;
+}
+
+#right-arrow {
+    vertical-align: middle;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 table {
@@ -30,17 +49,4 @@ td:hover {
     opacity: 0.7;
     cursor: pointer;
     user-select: none;
-}
-
-.buttons {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 1rem;
-    align-items: center;
-}
-
-button:hover {
-    cursor: pointer;
 }

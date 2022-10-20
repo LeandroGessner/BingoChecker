@@ -55,10 +55,10 @@ function changeBackgroundColor(drawnNumbersArray) {
     let previousCell = drawnNumbersArray.slice(-2)
 
     if (drawnNumbersArray.length <= 1) {
-        currentCell[0].style.backgroundColor = "red";
+        currentCell[0].style.backgroundColor = "#FF1D0B";
     } else {
-        currentCell[0].style.backgroundColor = "red";
-        previousCell[0].style.backgroundColor = "#ADD8E6";
+        currentCell[0].style.backgroundColor = "#FF1D0B";
+        previousCell[0].style.backgroundColor = "#87CEEB";
     }
 };
 
